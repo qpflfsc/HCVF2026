@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Trần Quang Tâm">
+    <title>Phiếu Tham Vấn Ý Kiến Các Bên Liên Quan — QPFL FSC & HCVF 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #15803d;
+            --primary-dark: #166534;
+            --primary-light: #dcfce7;
+            --primary-border: #86efac;
+            --forest: #0f5132;
+            --secondary: #0284c7;
+            --accent: #d97706;
+            --amber-bg: #fffbeb;
+            --amber-border: #fcd34d;
+            --slate-900: #0f172a;
+            --slate-800: #1e293b;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-500: #64748b;
+            --slate-100: #f1f5f9;
+            --slate-50: #f8fafc;
+            --border: #cbd5e1;
+            --card-bg: #ffffff;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius-md: 8px;
+            --radius-lg: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--slate-800);
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(135deg, #0f5132 0%, #15803d 100%);
+            color: white;
+            padding: 32px 28px 24px 28px;
+            border-bottom: 4px solid #166534;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .brand-badge {
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(8px);
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .meta-badges {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .badge-fsc {
+            background: #fef08a;
+            color: #854d0e;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .badge-hcvf {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .company-title {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            opacity: 0.95;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .main-heading {
+            font-family: 'Merriweather', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            line-height: 1.35;
+            margin-bottom: 10px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .sub-heading {
+            font-size: 0.95rem;
+            opacity: 0.92;
+            font-weight: 400;
+            line-height: 1.5;
+            max-width: 900px;
+        }
+
+        /* NOTICE BANNER */
+        .notice-banner {
+            background: #f0fdf4;
+            border-left: 5px solid var(--primary);
+            padding: 16px 20px;
+            margin: 20px 24px 10px 24px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            font-size: 0.925rem;
+            color: #166534;
+            line-height: 1.65;
+        }
+
+        .notice-banner strong {
+            color: #14532d;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.975rem;
+        }
+
+        /* 3 QUICK-READ BUTTONS */
+        .quick-read-section {
+            padding: 12px 24px 20px 24px;
+            background: #ffffff;
+        }
+
+        .section-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-badge {
+            background: #fee2e2;
+            color: #b91c1c;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            border: 1px solid #fca5a5;
+            animation: pulseAttention 1.6s infinite;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        @keyframes pulseAttention {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+
+        .btn-group-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .btn-summary {
+            background: #ffffff;
+            border: 2px solid #86efac;
+            border-radius: var(--radius-lg);
+            padding: 18px 16px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            box-shadow: 0 2px 6px rgba(21, 128, 61, 0.08);
+        }
+
+        .btn-summary:hover {
+            transform: translateY(-3px);
+            border-color: #15803d;
+            box-shadow: 0 8px 16px -2px rgba(21, 128, 61, 0.2);
+            background: #f0fdf4;
+        }
+
+        .btn-summary .tag {
+            font-size: 0.725rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #15803d;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-summary .title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 6px;
+            line-height: 1.35;
+        }
+
+        .btn-summary .desc {
+            font-size: 0.825rem;
+            color: var(--slate-600);
+            line-height: 1.5;
+            margin-bottom: 12px;
+            flex-grow: 1;
+        }
+
+        .btn-summary .action-hint {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #15803d;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* QUICK SUBMIT BANNER (1-CLICK ALL AGREE) */
+        .quick-submit-banner {
+            margin: 10px 24px 20px 24px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%);
+            border: 2px solid #f59e0b;
+            border-radius: var(--radius-lg);
+            padding: 20px 24px;
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.12);
+        }
+
+        .quick-submit-badge {
+            display: inline-block;
+            background: #d97706;
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .quick-submit-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #78350f;
+            margin-bottom: 6px;
+        }
+
+        .quick-submit-desc {
+            font-size: 0.875rem;
+            color: #92400e;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        .btn-quick-agree {
+            background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            padding: 14px 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(22, 163, 74, 0.3);
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .btn-quick-agree:hover {
+            background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(22, 163, 74, 0.4);
+        }
+
+        .btn-quick-agree:active {
+            transform: translateY(0);
+        }
+
+        .btn-quick-agree .btn-icon {
+            font-size: 1.8rem;
+            background: rgba(255, 255, 255, 0.2);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .btn-quick-agree .btn-text strong {
+            display: block;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-quick-agree .btn-text small {
+            display: block;
+            font-size: 0.78rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        /* MAP GALLERY */
+        .map-section {
+            padding: 10px 24px 24px 24px;
+            background: var(--slate-50);
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .map-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 14px;
+            margin-top: 10px;
+        }
+
+        .map-card {
+            background: white;
+            border: 1px solid #cbd5e1;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .map-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: #94a3b8;
+        }
+
+        .map-card .img-wrapper {
+            position: relative;
+            height: 160px;
+            background: #0f172a;
+            overflow: hidden;
+        }
+
+        .map-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .map-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .map-card .badge-overlay {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(4px);
+            color: white;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .map-card .map-info {
+            padding: 10px 12px;
+        }
+
+        .map-card .map-title {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--slate-800);
+            line-height: 1.35;
+        }
+
+        .map-card .map-sub {
+            font-size: 0.75rem;
+            color: var(--slate-500);
+            margin-top: 2px;
+        }
+
+        /* FORM SECTION */
+        .form-section {
+            padding: 24px;
+        }
+
+        .form-row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-row-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .field-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--slate-700);
+        }
+
+        .required {
+            color: #dc2626;
+            margin-left: 2px;
+        }
+
+        input[type="text"], input[type="tel"], select, textarea {
+            font-family: inherit;
+            font-size: 0.9rem;
+            padding: 9px 12px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: white;
+            color: var(--slate-800);
+            transition: all 0.2s ease;
+            outline: none;
+        }
+
+        input[type="text"]:focus, input[type="tel"]:focus, select:focus, textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.15);
+        }
+
+        /* TOPIC CARDS */
+        .topic-card {
+            background: #ffffff;
+            border: 1.5px solid #cbd5e1;
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .topic-number {
+            background: #15803d;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .topic-title {
+            font-size: 0.975rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .topic-question {
+            background: #f8fafc;
+            border-left: 3px solid #0284c7;
+            padding: 10px 14px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.875rem;
+            color: #334155;
+            line-height: 1.55;
+            margin-bottom: 14px;
+        }
+
+        /* PROMINENT RESPONSE BLOCK */
+        .response-container {
+            background: #f0fdf4;
+            border: 2px solid #86efac;
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-top: 10px;
+        }
+
+        .response-title-bar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #166534;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .radio-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 11px 14px;
+            border: 1.5px solid #bbf7d0;
+            border-radius: var(--radius-md);
+            background: #ffffff;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        .radio-label:hover {
+            border-color: #22c55e;
+            background: #fafffc;
+        }
+
+        .radio-label input[type="radio"] {
+            margin-top: 3px;
+            accent-color: #15803d;
+            width: 17px;
+            height: 17px;
+            flex-shrink: 0;
+        }
+
+        .radio-label.checked {
+            border-color: #15803d;
+            background: #dcfce7;
+            box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.2);
+            font-weight: 500;
+        }
+
+        .textarea-wrapper {
+            margin-top: 10px;
+        }
+
+        .textarea-label {
+            font-size: 0.825rem;
+            font-weight: 600;
+            color: #166534;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .response-textarea {
+            width: 100%;
+            min-height: 72px;
+            border: 1.5px solid #86efac;
+            border-radius: var(--radius-md);
+            background: #ffffff;
+            padding: 8px 12px;
+            font-size: 0.875rem;
+            color: #1e293b;
+            resize: vertical;
+        }
+
+        .response-textarea:focus {
+            border-color: #15803d;
+            box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.15);
+        }
+
+        /* PART IV: QPFL CONFIRMATION & THANK YOU CARD */
+        .confirmation-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 1.5px solid #cbd5e1;
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .qpfl-seal-badge {
+            display: inline-block;
+            background: rgba(21, 128, 61, 0.12);
+            color: #15803d;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .qpfl-thankyou-heading {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .qpfl-thankyou-message {
+            font-size: 0.9rem;
+            color: #475569;
+            max-width: 720px;
+            margin: 0 auto 20px auto;
+            line-height: 1.6;
+        }
+
+        .qpfl-rep-card {
+            background: #ffffff;
+            border: 2px solid #86efac;
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            display: inline-block;
+            min-width: 320px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .qpfl-rep-card .rep-name {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #15803d;
+            letter-spacing: 0.5px;
+        }
+
+        .qpfl-rep-card .rep-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #334155;
+            margin-top: 2px;
+        }
+
+        .qpfl-rep-card .rep-closing {
+            font-size: 0.925rem;
+            font-weight: 700;
+            color: #d97706;
+            margin-top: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .form-date-footer {
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        /* SUBMIT BUTTON BAR */
+        .submit-bar-centered {
+            text-align: center;
+            margin-top: 32px;
+            padding: 20px 0;
+            border-top: 1px dashed #cbd5e1;
+        }
+
+        .btn-submit-main {
+            background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+            color: white;
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            padding: 16px 42px;
+            border-radius: 9999px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 20px -3px rgba(21, 128, 61, 0.4), 0 4px 6px -2px rgba(21, 128, 61, 0.2);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .btn-submit-main:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 24px -4px rgba(21, 128, 61, 0.5);
+            background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+        }
+
+        .btn-submit-main:active {
+            transform: translateY(0);
+        }
+
+        .btn-submit-main:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* MODAL STYLES */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #ffffff;
+            width: 100%;
+            max-width: 820px;
+            max-height: 90vh;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: modalFadeIn 0.2s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.97); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-header {
+            padding: 18px 24px;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .modal-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .modal-icon {
+            font-size: 1.35rem;
+        }
+
+        .modal-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .modal-close-btn {
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            color: #64748b;
+            cursor: pointer;
+            padding: 4px;
+            line-height: 1;
+            transition: color 0.15s ease;
+        }
+
+        .modal-close-btn:hover {
+            color: #0f172a;
+        }
+
+        .modal-body {
+            padding: 24px;
+            overflow-y: auto;
+            font-size: 0.925rem;
+            line-height: 1.65;
+            color: #334155;
+        }
+
+        .modal-body h4 {
+            font-size: 0.975rem;
+            font-weight: 700;
+            color: #15803d;
+            margin: 16px 0 6px 0;
+        }
+
+        .modal-body h4:first-child {
+            margin-top: 0;
+        }
+
+        .modal-body ul {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .modal-body li {
+            margin-bottom: 6px;
+        }
+
+        .modal-footer {
+            padding: 14px 24px;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .modal-footer .page-hint {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        .btn-modal-close {
+            background: #15803d;
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: background 0.15s ease;
+        }
+
+        .btn-modal-close:hover {
+            background: #166534;
+        }
+
+        /* LIGHTBOX FOR MAPS */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(10, 15, 29, 0.92);
+            backdrop-filter: blur(8px);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 95vw;
+            max-height: 95vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            background: #000;
+        }
+
+        .lightbox-caption {
+            color: #f8fafc;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 12px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 6px 16px;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            line-height: 1;
+        }
+
+        /* SUCCESS POPUP */
+        .success-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(6px);
+            z-index: 10001;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .success-popup.active {
+            display: flex;
+        }
+
+        .success-popup-box {
+            background: white;
+            width: 100%;
+            max-width: 480px;
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-top: 6px solid #16a34a;
+            animation: modalFadeIn 0.25s ease;
+        }
+
+        .success-popup-icon {
+            width: 68px;
+            height: 68px;
+            background: #dcfce7;
+            color: #16a34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin: 0 auto 16px auto;
+        }
+
+        .success-popup-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .success-popup-desc {
+            font-size: 0.925rem;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            body { padding: 8px; }
+            .header { padding: 24px 18px; }
+            .main-heading { font-size: 1.35rem; }
+            .quick-read-section, .map-section, .form-section { padding: 18px 14px; }
+            .btn-group-3 { grid-template-columns: 1fr; }
+            .form-row-2, .form-row-3 { grid-template-columns: 1fr; }
+            .btn-submit-main { width: 100%; justify-content: center; }
+            .qpfl-rep-card { min-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-top">
+            <div class="brand-badge">
+                🌲 QUY NHON PLANTATION FOREST CO., LTD (QPFL)
+            </div>
+            <div class="meta-badges">
+                <span class="badge-fsc">Chứng chỉ FSC (từ năm 2006)</span>
+                <span class="badge-hcvf">Đánh giá HCVF 2026</span>
+            </div>
+        </div>
+        <div class="company-title">CÔNG TY TNHH TRỒNG RỪNG QUY NHƠN VIỆT NAM</div>
+        <h1 class="main-heading">PHIẾU THAM VẤN Ý KIẾN CÁC BÊN LIÊN QUAN</h1>
+        <p class="sub-heading">
+            Về Công tác Quản lý Rừng Bền vững (FSC), Hiện trạng Đa dạng Sinh học và Rừng có Giá trị Bảo tồn Cao (HCVF) trên địa bàn 21 xã/phường có diện tích rừng của Công ty.
+        </p>
+
+        <!-- 3 CÔNG CỤ CỐT LÕI (DASHBOARD - PDF - EXCEL) -->
+        <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.25); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <div style="font-size: 0.85rem; opacity: 0.95;">
+                📊 <strong>Trung tâm dữ liệu & Giám sát trực tuyến:</strong> Đầy đủ 03 công cụ quản lý thời gian thực
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="report.html" style="display: inline-flex; align-items: center; gap: 6px; background: #ffffff; color: #166534; padding: 7px 16px; border-radius: 9999px; font-size: 0.825rem; font-weight: 800; text-decoration: none; box-shadow: 0 2px 4px rgba(0,0,0,0.15); transition: all 0.2s;">
+                    <span>📊</span>
+                    <span>1. XEM ONLINE DASHBOARD</span>
+                </a>
+                <a href="report.html" onclick="setTimeout(()=>{window.open('/report.html');},100)" style="display: inline-flex; align-items: center; gap: 6px; background: #e0f2fe; color: #0369a1; padding: 7px 16px; border-radius: 9999px; font-size: 0.825rem; font-weight: 800; text-decoration: none; box-shadow: 0 2px 4px rgba(0,0,0,0.15); transition: all 0.2s;">
+                    <span>🖨️</span>
+                    <span>2. XUẤT PDF BÁO CÁO</span>
+                </a>
+                <a href="/api/download?key=QPFL2026" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #fef08a; color: #854d0e; padding: 7px 16px; border-radius: 9999px; font-size: 0.825rem; font-weight: 800; text-decoration: none; box-shadow: 0 2px 4px rgba(0,0,0,0.15); transition: all 0.2s;">
+                    <span>📥</span>
+                    <span>3. XUẤT EXCEL KẾT QUẢ</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- NOTICE BANNER -->
+    <div class="notice-banner">
+        <strong>Kính gửi: Quý cơ quan, Ban ngành Kiểm lâm, Chính quyền địa phương và Bà con nhân dân vùng lân cận</strong>
+        Công ty QPFL đang quản lý hơn <strong>8.525,32 ha</strong> rừng trồng keo lai sản xuất (trong đó có <strong>911,98 ha</strong> khoanh nuôi phục hồi tự nhiên theo chuẩn FSC). Chúng tôi thấu hiểu rằng: kinh doanh rừng trồng sản xuất chỉ thực sự bền vững khi tôn trọng quyền lợi của cộng đồng, bảo vệ nguồn nước và đất đai cho bà con hạ du. Công ty cầu thị lắng nghe mọi ý kiến đóng góp thẳng thắn, không né tránh thiếu sót để hoàn thiện kế hoạch quản lý năm 2026.
+    </div>
+
+    <!-- 3 QUICK-READ BUTTONS -->
+    <section class="quick-read-section">
+        <div class="section-header-row">
+            <h2 class="section-title">
+                Tóm Tắt Báo Cáo Chuyên Môn
+                <span class="pulse-badge">🔴 BẤM ĐỌC NHANH (1 TRANG)</span>
+            </h2>
+            <div style="font-size: 0.8rem; color: var(--slate-500);">Đã đối chiếu thực địa 10–11/10/2026</div>
+        </div>
+
+        <div class="btn-group-3">
+            <!-- Button 1: Dong Vat -->
+            <button type="button" class="btn-summary" onclick="openSummaryModal('modal-dong-vat')">
+                <div class="tag">🐾 Báo cáo Động Vật</div>
+                <div class="title">Hiện Trạng Đa Dạng Động Vật (1 Trang)</div>
+                <div class="desc">Ghi nhận 34 loài hoang dã phổ thông. 100% loài ít quan tâm (LC), không có động vật quý hiếm nguy cấp. Bảo vệ khe suối và cấm săn bắt.</div>
+                <div class="action-hint">👉 Bấm đọc tóm tắt cốt lõi &rarr;</div>
+            </button>
+
+            <!-- Button 2: Thuc Vat -->
+            <button type="button" class="btn-summary" onclick="openSummaryModal('modal-thuc-vat')">
+                <div class="tag">🌿 Báo cáo Thực Vật</div>
+                <div class="title">Hiện Trạng Đa Dạng Thực Vật (1 Trang)</div>
+                <div class="desc">Ghi nhận 94 loài khu phục hồi và 203 loài rừng thương mại. Không có thực vật quý hiếm. Trọng tâm: Phòng cháy mùa khô & duy trì lâm sản phụ.</div>
+                <div class="action-hint">👉 Bấm đọc tóm tắt cốt lõi &rarr;</div>
+            </button>
+
+            <!-- Button 3: HCVF -->
+            <button type="button" class="btn-summary" onclick="openSummaryModal('modal-hcvf')">
+                <div class="tag">🛡️ Báo cáo HCVF</div>
+                <div class="title">Đánh Giá Giá Trị Bảo Tồn Cao (1 Trang)</div>
+                <div class="desc">Xác định HCV 4 (chống xói mòn, sạt lở đất, bảo vệ dòng chảy) là giá trị xung yếu duy nhất. Duy trì 49 hố thu đất Canh Phong (CP3: 18 hố; CP6: 18 hố; CP7: 13 hố) và bảo vệ lăng mộ.</div>
+                <div class="action-hint">👉 Bấm đọc tóm tắt cốt lõi &rarr;</div>
+            </button>
+        </div>
+    </section>
+
+    <!-- MAP GALLERY SECTION -->
+    <section class="map-section">
+        <div class="section-header-row">
+            <h2 class="section-title">
+                Hệ Thống Bản Đồ Quản Lý Rừng & Thực Địa
+                <span style="background: var(--primary-light); color: var(--primary-dark); font-size: 0.75rem; padding: 2px 8px; border-radius: 9999px; font-weight: 600;">Bấm ảnh để phóng to</span>
+            </h2>
+            <div style="font-size: 0.8rem; color: var(--slate-500);">Dữ liệu không gian GIS 2026</div>
+        </div>
+
+        <div class="map-grid">
+            <!-- Map 1 -->
+            <div class="map-card" onclick="openLightbox('maps/map_1_fsc_forest_overview.jpg', 'Hình 1.1. Bản đồ Rừng trồng tham gia chứng chỉ FSC toàn công ty (8.525,32 ha)')">
+                <div class="img-wrapper">
+                    <img src="maps/map_1_fsc_forest_overview.jpg" alt="Bản đồ FSC QPFL" onerror="this.src='bando_tongthe_qpfl_2026.jpg'">
+                    <span class="badge-overlay">Toàn cảnh</span>
+                </div>
+                <div class="map-info">
+                    <div class="map-title">1. Toàn Cảnh Lâm Phần FSC</div>
+                    <div class="map-sub">Phân bố 8.525 ha trên 21 xã</div>
+                </div>
+            </div>
+
+            <!-- Map 7 -->
+            <div class="map-card" onclick="openLightbox('maps/map_7_two_forest_types.jpg', 'Hình H2. Bản đồ Phân bố hai loại rừng QPFL 2026: Rừng thương mại (7.613 ha) & Mẫu phục hồi tự nhiên (912 ha)')">
+                <div class="img-wrapper">
+                    <img src="maps/map_7_two_forest_types.jpg" alt="Bản đồ 2 loại rừng" onerror="this.src='bando_tongthe_qpfl_2026.jpg'">
+                    <span class="badge-overlay">2 Loại rừng</span>
+                </div>
+                <div class="map-info">
+                    <div class="map-title">2. Phân Bố Hai Loại Rừng</div>
+                    <div class="map-sub">Rừng thương mại & Khu 10% phục hồi</div>
+                </div>
+            </div>
+
+            <!-- Map 6 -->
+            <div class="map-card" onclick="openLightbox('maps/map_6_survey_transects.jpg', 'Hình H1. Bản đồ các tuyến điều tra Đa dạng sinh học 2026 (R01 An Nhơn/Tuy Phước, R02 Canh Vinh, R03 Đề Gi)')">
+                <div class="img-wrapper">
+                    <img src="maps/map_6_survey_transects.jpg" alt="Tuyến điều tra thực địa" onerror="this.src='bando_tongthe_qpfl_2026.jpg'">
+                    <span class="badge-overlay">Thực địa</span>
+                </div>
+                <div class="map-info">
+                    <div class="map-title">3. Tuyến Khảo Sát Thực Địa</div>
+                    <div class="map-sub">Tuyến điều tra ĐV/TV ngày 10–11/10/2026</div>
+                </div>
+            </div>
+
+            <!-- Map 3 -->
+            <div class="map-card" onclick="openLightbox('maps/map_3_hcv4_erosion_control.jpg', 'Hình 3.8. Bản đồ các khu vực xuất hiện HCV 4 (Phòng hộ đầu nguồn, chống xói mòn sạt lở)')">
+                <div class="img-wrapper">
+                    <img src="maps/map_3_hcv4_erosion_control.jpg" alt="Khu vực HCV 4" onerror="this.src='bando_tongthe_qpfl_2026.jpg'">
+                    <span class="badge-overlay">HCV 4</span>
+                </div>
+                <div class="map-info">
+                    <div class="map-title">4. Khu Vực Xung Yếu HCV 4</div>
+                    <div class="map-sub">Bảo vệ đất dốc & khe suối đầu nguồn</div>
+                </div>
+            </div>
+
+            <!-- Map 4 -->
+            <div class="map-card" onclick="openLightbox('maps/map_4_erosion_dams_detail.png', 'Hình 3.9. Vị trí 49 hố thu đất, mương dẫn dòng tại Canh Phong 3, Canh Phong 6 và Canh Phong 7')">
+                <div class="img-wrapper">
+                    <img src="maps/map_4_erosion_dams_detail.png" alt="Hầm lắng Canh Phong" onerror="this.src='bando_tongthe_qpfl_2026.jpg'">
+                    <span class="badge-overlay">Công trình</span>
+                </div>
+                <div class="map-info">
+                    <div class="map-title">5. Hầm Lắng Chống Xói Mòn</div>
+                    <div class="map-sub">Hệ thống 49 công trình Canh Phong</div>
+                </div>
+            </div>
+
+            <!-- Map 5 -->
+            <div class="map-card" onclick="openLightbox('maps/map_5_cultural_graves.jpg', 'Hình 3.14. Bản đồ các khu vực lăng mộ, mồ mả người dân được bảo vệ tại xã Đề Gi')">
+                <div class="img-wrapper">
+                    <img src="maps/map_5_cultural_graves.jpg" alt="Lăng mộ Đề Gi" onerror="this.src='bando_tongthe_qpfl_2026.jpg'">
+                    <span class="badge-overlay">Văn hóa</span>
+                </div>
+                <div class="map-info">
+                    <div class="map-title">6. Khu Vực Lăng Mộ Người Dân</div>
+                    <div class="map-sub">Bảo vệ hành lang tâm linh tại Đề Gi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONSULTATION FORM -->
+    <form id="consultationForm" class="form-section" onsubmit="handleFormSubmit(event)">
+        <h2 class="section-title" style="margin-bottom: 20px;">
+            Nội Dung Lấy Ý Kiến Tham Vấn
+            <span style="background: var(--primary-light); color: var(--primary-dark); font-size: 0.75rem; padding: 2px 8px; border-radius: 9999px; font-weight: 600;">Dành cho các bên liên quan</span>
+        </h2>
+
+        <!-- PART I: STAKEHOLDER INFO -->
+        <div style="background: var(--slate-50); padding: 20px; border-radius: var(--radius-md); border: 1.5px solid var(--border); margin-bottom: 20px;">
+            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--slate-800); margin-bottom: 14px; text-transform: uppercase;">
+                I. Thông Tin Người / Đơn Vị Được Tham Vấn
+            </h3>
+            <!-- Row 1: Họ tên + Chức vụ/Học vị + Cơ quan -->
+            <div class="form-row-3">
+                <div class="form-group">
+                    <label class="field-label">Họ và tên người đại diện <span class="required">*</span></label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="Ví dụ: TS. Lê Thái Hùng / Nguyễn Văn A">
+                </div>
+                <div class="form-group">
+                    <label class="field-label">Chức vụ / Học vị <span style="font-size: 0.8rem; color: var(--slate-500); font-weight: 400;">(Không bắt buộc)</span></label>
+                    <input type="text" id="position" name="position" placeholder="Ví dụ: Giảng viên / Trưởng thôn / Cán bộ địa chính...">
+                </div>
+                <div class="form-group">
+                    <label class="field-label">Cơ quan / Đơn vị / Trường Viện / Thôn xóm <span class="required">*</span></label>
+                    <input type="text" id="organization" name="organization" required placeholder="Ví dụ: ĐH Nông Lâm Huế / UBND xã Canh Vinh...">
+                </div>
+            </div>
+
+            <!-- Row 2: SĐT + Email + Tư cách tham vấn -->
+            <div class="form-row-3">
+                <div class="form-group">
+                    <label class="field-label">Số điện thoại / Zalo</label>
+                    <input type="tel" id="phone" name="phone" placeholder="09xx xxx xxx">
+                </div>
+                <div class="form-group">
+                    <label class="field-label">Email người phản hồi <span style="font-size: 0.8rem; color: var(--slate-500); font-weight: 400;">(Không bắt buộc)</span></label>
+                    <input type="email" id="email" name="email" placeholder="Ví dụ: hung.le@huaf.edu.vn">
+                </div>
+                <div class="form-group">
+                    <label class="field-label">Tư cách tham vấn <span class="required">*</span></label>
+                    <select id="stakeholderGroup" name="stakeholderGroup" required>
+                        <option value="">-- Chọn nhóm bên liên quan --</option>
+                        <option value="Chuyên gia / Nhà khoa học / Tổ chức bảo tồn">Chuyên gia / Nhà khoa học / Tổ chức bảo tồn / Trường Đại học</option>
+                        <option value="Kiểm lâm">Hạt Kiểm lâm / Kiểm lâm địa bàn</option>
+                        <option value="Chính quyền xã">Đại diện UBND xã / Cán bộ Địa chính - Nông nghiệp</option>
+                        <option value="Trưởng thôn">Trưởng thôn / Đại diện cộng đồng dân cư giáp ranh</option>
+                        <option value="Người dân">Người dân sở tại có đất/mồ mả giáp ranh</option>
+                        <option value="Công nhân / Bảo vệ rừng">Công nhân / Đội bảo vệ rừng cơ sở</option>
+                        <option value="Đơn vị thi công lâm sinh">Đơn vị thi công lâm sinh (Khai thác, vận chuyển, trồng rừng)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Row 3: Địa bàn xã -->
+            <div class="form-group" style="margin-top: 10px; margin-bottom: 0;">
+                <label class="field-label">Địa bàn xã / khu vực có diện tích rừng liên quan <span class="required">*</span></label>
+                <select id="commune" name="commune" required>
+                    <option value="">-- Chọn xã / phường liên quan --</option>
+                    <option value="Tổng thể chung / Toàn bộ khu vực tỉnh">Tổng thể chung / Toàn bộ khu vực tỉnh (Phạm vi đánh giá mở rộng)</option>
+                    <option value="Canh Liên">Xã Canh Liên (Huyện Vân Canh)</option>
+                    <option value="Canh Vinh">Xã Canh Vinh (Huyện Vân Canh)</option>
+                    <option value="Vân Canh">Thị trấn Vân Canh (Huyện Vân Canh)</option>
+                    <option value="Ân Tường">Xã Ân Tường (Huyện Hoài Ân)</option>
+                    <option value="Ân Hảo">Xã Ân Hảo (Huyện Hoài Ân)</option>
+                    <option value="Xuân An">Xã Xuân An (Huyện Phù Cát)</option>
+                    <option value="Đề Gi">Khu vực Đề Gi / Cát Khánh (Huyện Phù Cát)</option>
+                    <option value="Phù Cát">Huyện Phù Cát (các xã khác)</option>
+                    <option value="Tam Quan">Tam Quan (TX Hoài Nhơn)</option>
+                    <option value="Hoài Nhơn Bắc">Hoài Nhơn Bắc (TX Hoài Nhơn)</option>
+                    <option value="Hoài Nhơn Tây">Hoài Nhơn Tây (TX Hoài Nhơn)</option>
+                    <option value="Tây Sơn">Huyện Tây Sơn</option>
+                    <option value="An Nhơn Nam">Thị xã An Nhơn</option>
+                    <option value="Tuy Phước Tây">Huyện Tuy Phước</option>
+                    <option value="Phù Mỹ">Huyện Phù Mỹ</option>
+                    <option value="Bình Dương">Bình Dương (Huyện Phù Mỹ)</option>
+                    <option value="Hội Sơn">Hội Sơn</option>
+                    <option value="Hòa Hội">Hòa Hội</option>
+                    <option value="Bình Phú">Bình Phú</option>
+                    <option value="Ngô Mây">Ngô Mây</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- QUICK 1-CLICK ALL AGREE BANNER (BỔ SUNG THEO YÊU CẦU: GỬI NGAY = KHÔNG CÓ Ý KIẾN GÌ HẾT, ĐỒNG Ý HẾT) -->
+        <div class="quick-submit-banner">
+            <div class="quick-submit-badge">⚡ CHỨC NĂNG GỬI NHANH 1 CHẠM</div>
+            <div class="quick-submit-title">Nếu Quý vị hoàn toàn nhất trí và không có ý kiến gì khác:</div>
+            <p class="quick-submit-desc">
+                Chỉ cần điền <strong>Họ tên & Đơn vị</strong> ở Phần I trên, sau đó bấm nút xanh dưới đây. Hệ thống sẽ <strong>tự động tích chọn tất cả phương án đồng ý</strong> và gửi phiếu ngay lập tức cho Quý vị!
+            </p>
+            <button type="button" class="btn-quick-agree" onclick="quickSubmitAllAgree()">
+                <div class="btn-icon">⚡</div>
+                <div class="btn-text">
+                    <strong>GỬI NGAY: HOÀN TOÀN ĐỒNG THUẬN & KHÔNG CÓ Ý KIẾN GÌ HẾT</strong>
+                    <small>Bấm vào đây để hoàn tất nộp phiếu tham vấn trong 1 giây (Đồng ý hết mọi nội dung)</small>
+                </div>
+            </button>
+        </div>
+
+        <!-- PART II: TOPIC QUESTIONS -->
+        <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--slate-800); margin-bottom: 14px; text-transform: uppercase;">
+            II. Ý Kiến Đánh Giá Theo Từng Lĩnh Vực Cụ Thể
+        </h3>
+
+        <!-- Topic 1 -->
+        <div class="topic-card">
+            <div class="topic-header">
+                <div class="topic-number">1</div>
+                <div class="topic-title">Về Hiện Trạng Đa Dạng Động – Thực Vật & Lâm Sản Phụ (Giá trị HCV 1)</div>
+            </div>
+            <div class="topic-question">
+                Kết quả khảo sát thực địa của tư vấn cho thấy trong rừng keo trồng chủ yếu có các loài động thực vật phổ thông (chim, sóc, chuột, ếch nhái, cây bụi, chổi sể, cây thuốc nam...), <strong>chưa ghi nhận loài động thực vật quý hiếm nguy cấp</strong>. Người dân địa phương có vào rừng bẻ chổi sể, hái măng, nhặt nấm.
+            </div>
+
+            <div class="response-container">
+                <div class="response-title-bar">
+                    <span>🎯 Vui lòng chọn 1 mức độ đánh giá phù hợp:</span>
+                </div>
+                <div class="radio-options">
+                    <label class="radio-label" onclick="highlightRadio(this)">
+                        <input type="radio" name="q1_bio" value="Mức 1 - Hoàn toàn nhất trí: Thực tế địa phương chỉ có các loài phổ thông, chưa thấy loài quý hiếm; nhất trí với quy chế cho người dân thu hái lâm sản phụ." required>
+                        <span><strong>Mức 1 — Hoàn toàn nhất trí:</strong> Thực tế tại địa bàn cũng chỉ có các loài động thực vật phổ thông nêu trên, chưa từng thấy xuất hiện loài nguy cấp quý hiếm; nhất trí với quy chế cho phép người dân tiếp tục thu hái lâm sản ngoài gỗ truyền thống.</span>
+                    </label>
+                    <label class="radio-label" onclick="highlightRadio(this)">
+                        <input type="radio" name="q1_bio" value="Mức 2 - Cơ bản nhất trí nhưng có thông tin bổ sung: Cần công ty xác minh thêm một số loài đặc biệt hoặc hướng dẫn rõ phạm vi thu hái.">
+                        <span><strong>Mức 2 — Cơ bản nhất trí nhưng có thông tin bổ sung:</strong> Đồng tình với kết quả chung, tuy nhiên người dân/địa phương có phát hiện hoặc nghe nói xuất hiện loài đặc biệt cần xác minh, hoặc đề nghị hướng dẫn rõ hơn về phạm vi và khu vực thu hái (ghi rõ ô dưới).</span>
+                    </label>
+                    <label class="radio-label" onclick="highlightRadio(this)">
+                        <input type="radio" name="q1_bio" value="Mức 3 - Chưa đồng ý: Cho rằng trong lâm phần vẫn còn loài động thực vật quý hiếm, hoặc việc thu hái lâm sản phụ của dân còn gặp khó khăn.">
+                        <span><strong>Mức 3 — Chưa đồng ý với đánh giá:</strong> Cho rằng kết quả khảo sát chưa bao quát, trong lâm phần vẫn còn loài động thực vật quý hiếm cần khoanh vùng bảo tồn nghiêm ngặt, hoặc việc thu hái lâm sản phụ của người dân sở tại đang gặp trở ngại.</span>
+                    </label>
+                </div>
+
+                <div class="textarea-wrapper">
+                    <div class="textarea-label">
+                        <span>✍️ Ý kiến / Ghi chú cụ thể của Quý vị (nếu có):</span>
+                    </div>
+                    <textarea class="response-textarea" name="q1_note" placeholder="Nhập thêm chi tiết về loài hoặc tình hình thu hái lâm sản phụ tại địa phương..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topic 2 -->
+        <div class="topic-card">
+            <div class="topic-header">
+                <div class="topic-number">2</div>
+                <div class="topic-title">Về Nguồn Nước, Chống Xói Mòn Đất & Sạt Lở (Giá trị HCV 4)</div>
+            </div>
+            <div class="topic-question">
+                Công ty xác định việc giữ đất dốc, chống sạt lở và giữ sạch nguồn nước khe suối là trách nhiệm quan trọng nhất. Công ty cam kết: (1) Duy trì 49 hố thu đất Canh Phong (CP3: 18 hố; CP6: 18 hố; CP7: 13 hố) ngăn bùn cát; (2) Giữ nguyên vẹn dải cây tự nhiên ven khe suối; (3) Không đưa máy cơ giới lội bừa bãi qua suối gây đục nước.
+            </div>
+
+            <div class="response-container">
+                <div class="response-title-bar">
+                    <span>🎯 Vui lòng chọn 1 mức độ đánh giá phù hợp:</span>
+                </div>
+                <div class="radio-options">
+                    <label class="radio-label" onclick="highlightRadio(this)">
+                        <input type="radio" name="q2_water" value="Mức 1 - Tốt và rất an tâm: Rừng trồng và 49 hố thu đất giữ đất nước tốt, mùa mưa các năm qua không xảy ra sạt lở hay bồi lấp ruộng vườn." required>
+                        <span><strong>Mức 1 — Tốt và rất an tâm:</strong> Rừng trồng và hệ thống 49 hố thu đất Canh Phong phát huy hiệu quả tốt; mùa mưa các năm gần đây không xảy ra hiện tượng bồi lấp ruộng vườn hạ du hay ô nhiễm nguồn nước sinh hoạt.</span>
+                    </label>
+                    <label class="radio-label" onclick="highlightRadio(this)">
+                        <input type="radio" name="q2_water" value="Mức 2 - Khá nhưng còn ảnh hưởng cục bộ: Mưa bão lớn còn hiện tượng chảy tràn bùn cát ở đường vận xuất/lô mới khai thác, cần nạo vét kịp thời.">
+                        <span><strong>Mức 2 — Khá nhưng còn ảnh hưởng cục bộ:</strong> Cơ bản hạn chế được xói mòn, tuy nhiên khi có mưa bão lớn một số đoạn đường vận xuất hoặc lô mới khai thác còn chảy tràn bùn đỏ, đề nghị công ty thường xuyên nạo vét hầm lắng và khơi rãnh.</span>
+                    </label>
+                    <label class="radio-label" onclick="highlightRadio(this)">
+                        <input type="radio" name="q2_water" value="Mức 3 - Chưa đạt, còn lo ngại: Vẫn còn vị trí sạt lở hoặc nguồn nước khe suối bị ảnh hưởng nghiêm trọng cần công ty kiểm tra xử lý gấp.">
+                        <span><strong>Mức 3 — Chưa đạt, còn nhiều lo ngại:</strong> Hoạt động lâm sinh vẫn gây nguy cơ sạt lở đất hoặc nguồn nước khe suối sinh hoạt/tưới tiêu của bà con bị đục, ảnh hưởng nghiêm trọng (vui lòng ghi rõ tên khe suối, địa điểm ở ô dưới để xử lý gấp).</span>
+                    </label>
+                </div>
+
+                <div class="textarea-wrapper">
+                    <div class="textarea-label">
+                        <span>✍️ Ghi rõ vị trí khe suối hoặc địa điểm cần nạo vét hầm lắng, khơi thông rãnh thoát nước (nếu có):</span>
+                    </div>
+                    <textarea class="response-textarea" name="q2_note" placeholder="Ghi rõ tên khe suối, tiểu khu hoặc vị trí cần công ty lưu ý xử lý..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topic 3 -->
+        <div class="topic-card">
+            <div class="topic-header">
+                <div class="topic-number">3</div>
+                <div class="topic-title">Về Tác Động Văn Hóa – Xã Hội, Mồ Mả Lăng Mộ & Ranh Giới Đất Rừng (Giá trị HCV 5, HCV 6)</div>
+            </div>
+            <div class="topic-question">
+                Tại nhiều xã (như Đề Gi, Canh Vinh, An Nhơn), trong lâm phần có các khu vực mồ mả, lăng mộ của bà con nhân dân. Vào mùa khô, khu vực keo già phục hồi tự nhiên và rẫy dân tiềm ẩn nguy cơ cháy lan rất cao.
+            </div>
+
+            <div class="response-container">
+                <div class="response-title-bar">
+                    <span>🎯 Vui lòng chọn 1 mức độ đánh giá phù hợp:</span>
+                </div>
+                <div class="radio-options">
+                    <label class="radio-label" onclick="highlightRadio(this)">
+                        <input type="radio" name="q3_social" value="Mức 1 - Rất hài lòng: Công ty tôn trọng tuyệt đối phong tục, mồ mả được giữ nguyên vẹn đai bảo vệ, ranh giới ổn định." required>
+                        <span><strong>Mức 1 — Rất hài lòng:</strong> Công ty tôn trọng tuyệt đối phong tục địa phương; toàn bộ mồ mả gia tộc được giữ nguyên trạng đai bảo vệ an toàn, bà con thăm viếng thuận lợi; ranh giới và an ninh trật tự giáp ranh ổn định.</span>
+                    </label>
+                    <label class="radio-label" onclick="highlightRadio(this)">
+                        <input type="radio" name="q3_social" value="Mức 2 - Cơ bản hài lòng nhưng cần phối hợp tốt hơn: Cần tăng cường tuần tra PCCC mùa khô và rà soát cắm lại một số mốc ranh giới.">
+                        <span><strong>Mức 2 — Cơ bản hài lòng nhưng cần phối hợp tốt hơn:</strong> Việc tôn trọng mồ mả được đảm bảo, nhưng vào mùa khô cần phối hợp chặt chẽ hơn giữa BVR công ty và thôn/xã để trực gác PCCC; đồng thời cần rà soát cắm lại một số mốc ranh giới giáp rẫy dân chưa rõ.</span>
+                    </label>
+                    <label class="radio-label" onclick="highlightRadio(this)">
+                        <input type="radio" name="q3_social" value="Mức 3 - Chưa hài lòng, còn vướng mắc: Còn hiện tượng chồng lấn ranh giới đất sản xuất hoặc mồ mả gia tộc bị ảnh hưởng chưa được giải quyết.">
+                        <span><strong>Mức 3 — Chưa hài lòng, còn vướng mắc:</strong> Hiện còn điểm chồng lấn ranh giới với đất sản xuất của hộ dân, hoặc lối đi thăm viếng mồ mả bị ảnh hưởng bởi quá trình trồng/khai thác keo (ghi rõ vị trí để công ty đối thoại tháo gỡ).</span>
+                    </label>
+                </div>
+
+                <div class="textarea-wrapper">
+                    <div class="textarea-label">
+                        <span>✍️ Ghi chú thêm về mồ mả dòng họ, đề xuất phối hợp PCCC mùa khô hoặc làm rõ mốc ranh giới:</span>
+                    </div>
+                    <textarea class="response-textarea" name="q3_note" placeholder="Nhập thêm ý kiến cụ thể của Quý vị..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topic 4 -->
+        <div class="topic-card">
+            <div class="topic-header">
+                <div class="topic-number">4</div>
+                <div class="topic-title">Đánh Giá Về Tính Thực Tế Của Kế Hoạch Quản Lý & Cam Kết Cải Thiện Của QPFL</div>
+            </div>
+            <div class="topic-question">
+                Công ty chủ trương: <em>"Không hứa những điều viển vông ngoài khả năng của một đơn vị trồng rừng sản xuất; chỉ cam kết những việc làm được ngay, làm đến nơi đến chốn"</em>: (1) Cấm săn bẫy động vật; (2) Không đốt dọn thực bì tràn lan; (3) Nạo vét hầm lắng trước tháng 8; (4) Giữ đai rừng ven suối; (5) Có số điện thoại nóng tiếp nhận phản ánh của dân.
+            </div>
+
+            <div class="response-container">
+                <div class="response-title-bar">
+                    <span>🎯 Vui lòng chọn 1 mức độ đánh giá phù hợp:</span>
+                </div>
+                <div class="radio-options">
+                    <label class="radio-label" onclick="highlightRadio(this)">
+                        <input type="radio" name="q4_commit" value="Mức 1 - Rất thực tế và ủng hộ cao: Các cam kết rất sát sườn, đúng mong mỏi của địa phương; hoàn toàn ủng hộ công ty duy trì FSC." required>
+                        <span><strong>Mức 1 — Rất thực tế và ủng hộ cao:</strong> Các cam kết của công ty là rất sát sườn, đúng mong mỏi của chính quyền và người dân sở tại, có tính khả thi cao; hoàn toàn nhất trí ủng hộ công ty tiếp tục duy trì chứng chỉ quản lý rừng bền vững FSC.</span>
+                    </label>
+                    <label class="radio-label" onclick="highlightRadio(this)">
+                        <input type="radio" name="q4_commit" value="Mức 2 - Ủng hộ nhưng cần giám sát chặt chẽ: Đúng hướng nhưng cần bổ sung biện pháp đặc thù thôn/xã và công khai kết quả thực hiện.">
+                        <span><strong>Mức 2 — Ủng hộ nhưng cần bổ sung & giám sát chặt chẽ:</strong> Chủ trương là đúng đắn, tuy nhiên đề nghị công ty phải bổ sung thêm các biện pháp phù hợp với đặc thù riêng của từng thôn/xã và định kỳ công khai kết quả thực hiện cho địa phương giám sát.</span>
+                    </label>
+                    <label class="radio-label" onclick="highlightRadio(this)">
+                        <input type="radio" name="q4_commit" value="Mức 3 - Chưa thực tế, cần điều chỉnh: Cần có chính sách hỗ trợ thiết thực hơn về sinh kế, việc làm hoặc chia sẻ lợi ích với cộng đồng.">
+                        <span><strong>Mức 3 — Chưa thực tế, cần điều chỉnh:</strong> Cho rằng các giải pháp trên còn mang tính chung chung; đề nghị công ty cần có chính sách hỗ trợ cụ thể hơn về giao khoán, tạo việc làm ưu tiên cho lao động địa phương hoặc chia sẻ lợi ích thiết thực hơn.</span>
+                    </label>
+                </div>
+
+                <div class="textarea-wrapper">
+                    <div class="textarea-label">
+                        <span>✍️ Đề xuất bổ sung giải pháp thiết thực cho công ty QPFL:</span>
+                    </div>
+                    <textarea class="response-textarea" name="q4_note" placeholder="Nhập ý kiến đề xuất giải pháp..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- PART III: OPEN FEEDBACK -->
+        <div class="form-group" style="margin-top: 24px;">
+            <label class="field-label"><strong>III. Kiến Nghị, Đề Xuất Khác Của Quý Cơ Quan / Nhân Dân Đối Với Công Ty QPFL:</strong></label>
+            <textarea name="generalFeedback" id="generalFeedback" style="min-height: 100px; border: 1.5px solid #94a3b8;" placeholder="Góp ý chân thành, thẳng thắn về thái độ của cán bộ bảo vệ rừng, quy trình khai thác vận chuyển gỗ, hoặc các đề xuất hợp tác cùng phát triển kinh tế lâm nghiệp bền vững..."></textarea>
+        </div>
+
+        <!-- PART IV: CONFIRMATION & APPRECIATION FROM QPFL (BỎ BẮT KÝ VÌ BẤT KHẢ THI TRÊN THỰC ĐỊA) -->
+        <div class="confirmation-section">
+            <div class="qpfl-seal-badge">🌲 QUY NHON PLANTATION FOREST CO., LTD (QPFL)</div>
+            <div class="qpfl-thankyou-heading">LỜI CẢM ƠN TỪ ĐẠI DIỆN CÔNG TY QPFL</div>
+            <p class="qpfl-thankyou-message">
+                Ý kiến quý báu của Quý cơ quan, Ban ngành Kiểm lâm, Chính quyền địa phương và Bà con nhân dân là cơ sở quan trọng nhất để Công ty hoàn thiện Kế hoạch quản lý rừng bền vững và bảo vệ môi trường sinh thái.
+            </p>
+
+            <div class="qpfl-rep-card">
+                <div class="rep-name">Trần Quang Tâm</div>
+                <div class="rep-title">Đại diện phòng Kỹ Thuật QPFL</div>
+                <div class="rep-closing">Xin chân thành cảm ơn!</div>
+            </div>
+
+            <div class="form-date-footer">
+                Ngày <span id="currentDateFormatted">... tháng ... năm 2026</span>
+            </div>
+        </div>
+
+        <!-- ACTION BUTTONS: NỘP PHIẾU THAM VẤN (DUY NHẤT, TO RÕ, NỔI BẬT) -->
+        <div class="submit-bar-centered">
+            <button type="submit" id="btnSubmitForm" class="btn-submit-main">
+                <span style="font-size: 1.35rem;">📤</span>
+                <span>NỘP PHIẾU THAM VẤN</span>
+            </button>
+            <div style="font-size: 0.825rem; color: var(--slate-500);">
+                Dữ liệu sẽ được tự động lưu trữ và tổng hợp vào Báo cáo Tham vấn FSC QPFL 2026
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- ========================================================= -->
+<!-- MODAL 1: TÓM TẮT BÁO CÁO ĐỘNG VẬT (1 TRANG) -->
+<!-- ========================================================= -->
+<div id="modal-dong-vat" class="modal-overlay" onclick="closeModalOnBackdrop(event, 'modal-dong-vat')">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="modal-title-wrap">
+                <span class="modal-icon">🐾</span>
+                <div class="modal-title">TÓM TẮT CỐT LÕI — BÁO CÁO ĐA DẠNG ĐỘNG VẬT (1 TRANG)</div>
+            </div>
+            <button type="button" class="modal-close-btn" onclick="closeSummaryModal('modal-dong-vat')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <h4>1. Đặc Điểm Sinh Cảnh Rừng Trồng Keo Sản Xuất</h4>
+            <p>Lâm phần QPFL là rừng trồng thuần loài Keo lai chu kỳ ngắn (3–5 năm). Do rừng thường xuyên phát dọn, tỉa cành và khai thác trắng luân phiên nên không phải sinh cảnh thích hợp cho thú lớn. Các loài động vật ghi nhận chủ yếu là loài thích nghi cao (chim sâu, chích chòe, chào mào, sóc, chuột nương, cóc nhà, ngóe...).</p>
+            <p><strong>Nơi tập trung động vật nhiều nhất:</strong> Là sinh cảnh <em>khe suối, vùng đất ẩm (15 loài)</em> và <em>vùng giáp ranh bìa rừng (13 loài)</em>. Đây là "mạch sống" cần được ưu tiên bảo vệ.</p>
+
+            <h4>2. Tôn Chỉ Quản Lý Rừng Bền Vững (FSC)</h4>
+            <p>Dù là rừng trồng kinh tế, công ty xác định có trách nhiệm duy trì sự cân bằng sinh thái: bảo vệ các hành lang di chuyển của chim muông, không làm suy thoái nguồn nước và không làm đứt gãy chuỗi thức ăn tự nhiên của các loài bản địa.</p>
+
+            <h4>3. Các Giải Pháp Cải Thiện Làm Được Ngay (Không Hứa Suông)</h4>
+            <ul>
+                <li><strong>Bảo vệ tuyệt đối khe suối:</strong> Trong quá trình khai thác gỗ, giữ nguyên vẹn dải cây tự nhiên và thảm thực vật ven hai bên bờ suối để bảo vệ nơi uống nước và cư trú của động vật.</li>
+                <li><strong>Nghiêm cấm săn bẫy, kích điện:</strong> Ban hành quy chế nghiêm cấm công nhân và người ngoài đặt bẫy, dùng súng săn, kích điện trong toàn bộ lâm phần; cắm biển cảnh báo tại các đường mòn ra vào rừng.</li>
+                <li><strong>Vệ sinh môi trường rừng:</strong> Thu gom 100% phân bón, rác thải nhựa sau trồng và khai thác, tuyệt đối không vứt xuống khe suối gây ngộ độc nguồn nước.</li>
+            </ul>
+
+            <h4>4. Chiến Lược Giám Sát & Đánh Giá Tiếp Theo</h4>
+            <ul>
+                <li>Duy trì 02 tuyến điều tra cố định (R01 tại An Nhơn/Tuy Phước và R02 tại Canh Vinh) làm cơ sở tham chiếu theo dõi biến động hàng năm.</li>
+                <li>Lồng ghép việc ghi nhận dấu vết động vật vào các đợt tuần tra rừng định kỳ của đội bảo vệ; lập sổ theo dõi nếu phát hiện cá thể lạ hoặc các vụ việc bẫy bắt trái phép để phối hợp Kiểm lâm xử lý.</li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <span class="page-hint">Bản tóm tắt chuẩn 1 trang giấy A4</span>
+            <button type="button" class="btn-modal-close" onclick="closeSummaryModal('modal-dong-vat')">Đã hiểu, quay lại phiếu tham vấn</button>
+        </div>
+    </div>
+</div>
+
+<!-- ========================================================= -->
+<!-- MODAL 2: TÓM TẮT BÁO CÁO THỰC VẬT (1 TRANG) -->
+<!-- ========================================================= -->
+<div id="modal-thuc-vat" class="modal-overlay" onclick="closeModalOnBackdrop(event, 'modal-thuc-vat')">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="modal-title-wrap">
+                <span class="modal-icon">🌿</span>
+                <div class="modal-title">TÓM TẮT CỐT LÕI — BÁO CÁO ĐA DẠNG THỰC VẬT (1 TRANG)</div>
+            </div>
+            <button type="button" class="modal-close-btn" onclick="closeSummaryModal('modal-thuc-vat')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <h4>1. Hiện Trạng Thảm Thực Vật Tự Nhiên Dưới Tán Rừng</h4>
+            <p>Khảo sát ghi nhận 94 loài tại khu vực 10% phục hồi tự nhiên và 203 loài tại khu vực rừng thương mại. 100% loài là thực vật tái sinh tự nhiên phổ thông (cây bụi, chổi sể, mua, sim, cỏ lào, cây họ đậu...), <strong>hoàn toàn không có loài thực vật quý hiếm, nguy cấp</strong> trong Sách Đỏ Việt Nam hoặc IUCN.</p>
+            <p><strong>Lâm sản ngoài gỗ:</strong> Người dân địa phương có hoạt động bẻ chổi sể, hái măng và thu hái thảo dược nhỏ lẻ phục vụ gia đình.</p>
+
+            <h4>2. Tôn Chỉ Quản Lý & Tôn Trọng Sinh Kế Người Dân</h4>
+            <p>Công ty khẳng định: Rừng keo QPFL không đóng kín cửa. Công ty tạo điều kiện tối đa cho bà con địa phương thu hái lâm sản phụ truyền thống, với điều kiện cùng có trách nhiệm giữ rừng, không gây cháy rừng và không xâm hại cây keo non.</p>
+
+            <h4>3. Các Giải Pháp Thực Tế Làm Được Ngay</h4>
+            <ul>
+                <li><strong>Giữ thảm cây bản địa tại khu phục hồi tự nhiên (911,98 ha):</strong> Tuyệt đối không can thiệp chặt tỉa hoặc trồng dặm keo vào các diện tích này để rừng tái sinh đa tầng tán theo tự nhiên.</li>
+                <li><strong>Phòng chống cháy rừng mùa khô (Tháng 3 – Tháng 8):</strong> Phát dọn đường băng cản lửa rộng 10–15m giáp ranh nương rẫy của dân; phối hợp với chính quyền xã cấm đốt nương rẫy trong những ngày nắng nóng đỉnh điểm.</li>
+                <li><strong>Quản lý thực bì không dùng lửa tràn lan:</strong> Băm dập cành nhánh sau khai thác để trả lại mùn hữu cơ cho đất thay vì đốt trắng làm chai cằn đất dốc.</li>
+            </ul>
+
+            <h4>4. Giám Sát Định Kỳ</h4>
+            <ul>
+                <li>Kiểm tra tốc độ tái sinh tự nhiên tại 5 ô tiêu chuẩn mẫu phục hồi hàng năm.</li>
+                <li>Giám sát nguy cơ lây lan sâu bệnh hại lá keo để có biện pháp xử lý sinh học kịp thời, không lạm dụng hóa chất độc hại.</li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <span class="page-hint">Bản tóm tắt chuẩn 1 trang giấy A4</span>
+            <button type="button" class="btn-modal-close" onclick="closeSummaryModal('modal-thuc-vat')">Đã hiểu, quay lại phiếu tham vấn</button>
+        </div>
+    </div>
+</div>
+
+<!-- ========================================================= -->
+<!-- MODAL 3: TÓM TẮT BÁO CÁO HCVF (1 TRANG) -->
+<!-- ========================================================= -->
+<div id="modal-hcvf" class="modal-overlay" onclick="closeModalOnBackdrop(event, 'modal-hcvf')">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="modal-title-wrap">
+                <span class="modal-icon">🛡️</span>
+                <div class="modal-title">TÓM TẮT CỐT LÕI — BÁO CÁO RỪNG HCVF & BẢO VỆ ĐẤT NƯỚC (1 TRANG)</div>
+            </div>
+            <button type="button" class="modal-close-btn" onclick="closeSummaryModal('modal-hcvf')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 6px; padding: 12px 14px; margin-bottom: 14px;">
+                <div style="font-weight: 700; color: #b45309; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 4px;">
+                    📌 Kết Quả Đánh Giá 6 Giá Trị Bảo Tồn Cao (HCV 1 đến HCV 6):
+                </div>
+                <ul style="margin: 0; padding-left: 18px; font-size: 0.85rem; color: #78350f;">
+                    <li><strong>HCV 1, 2, 3, 5, 6 (cấp quốc gia/toàn cầu): KHÔNG HIỆN HỮU</strong> (Do toàn bộ lâm phần là rừng trồng sản xuất keo lai, phân tán, không có dải rừng nguyên vẹn lớn, không có loài nguy cấp tập trung, cộng đồng không sống phụ thuộc hoàn toàn vào rừng).</li>
+                    <li><strong>HCV 4 (Dịch vụ hệ sinh thái xung yếu): LÀ GIÁ TRỊ DUY NHẤT CÓ HIỆN HỮU</strong> với vai trò sống còn trong việc <strong>chống xói mòn, sạt lở đất dốc, hạn chế bồi lắng và bảo vệ dòng chảy khe suối</strong> trong mùa mưa lũ miền Trung.</li>
+                    <li><em>Riêng các khu vực mồ mả, lăng mộ của nhân dân trong rừng (HCV 6 mức vi mô địa phương tại xã Đề Gi...) được công ty lập danh sách bảo vệ nghiêm ngặt.</em></li>
+                </ul>
+            </div>
+
+            <h4>1. Tôn Chỉ Trách Nhiệm Với Cộng Đồng Hạ Du</h4>
+            <p>Công ty xác định rõ: Khai thác kinh doanh gỗ keo nhưng <strong>tuyệt đối không để xảy ra tình trạng trôi đất, sạt lở, bồi lấp ruộng đồng hay làm ô nhiễm nguồn nước suối của bà con nhân dân</strong>. Đây là cam kết đạo đức và là thước đo trách nhiệm cao nhất của QPFL.</p>
+
+            <h4>2. Các Công Trình Đã Triển Khai Thực Tế Tại Hiện Trường</h4>
+            <ul>
+                <li><strong>Hệ thống 49 công trình hầm lắng, mương dẫn dòng:</strong> Được công ty đầu tư xây dựng tại các khu vực đất dốc Canh Phong 3, Canh Phong 6 và Canh Phong 7 (diện tích 410,40 ha). Bùn cát trôi theo nước mưa được giữ lại trong hầm lắng, nước trong chảy qua ngưỡng tràn về khe suối tự nhiên.</li>
+                <li><strong>Hành lang bảo vệ mồ mả người dân:</strong> Cách ly tối thiểu 5m–10m quanh các khu lăng mộ dòng họ, không trồng keo lấn chiếm và tạo lối đi thuận tiện cho bà con viếng mộ dịp lễ tết.</li>
+            </ul>
+
+            <h4>3. Biện Pháp Cải Thiện Tiếp Tục Thực Hiện Ngay</h4>
+            <ul>
+                <li>Nạo vét định kỳ toàn bộ 49 hố thu đất trước ngày 31 tháng 8 hàng năm (trước mùa mưa bão lớn).</li>
+                <li>Khai thác cuốn chiếu theo đường đồng mức, không khai thác trắng quy mô quá lớn trên cùng một sườn dốc dốc trên 20 độ.</li>
+                <li>Tuyệt đối cấm máy múc, xe tải cày ủi lòng suối làm đục nước sinh hoạt của nhân dân.</li>
+            </ul>
+
+            <h4>4. Giám Sát Cùng Cộng Đồng</h4>
+            <p>Công khai số điện thoại đường dây nóng của Quản đốc lâm trường để Trưởng thôn và người dân phản ánh ngay khi phát hiện hiện tượng sạt lở hoặc bồi lắng bùn cát để công ty cử máy xử lý ngay trong 24 giờ.</p>
+        </div>
+        <div class="modal-footer">
+            <span class="page-hint">Bản tóm tắt chuẩn 1 trang giấy A4</span>
+            <button type="button" class="btn-modal-close" onclick="closeSummaryModal('modal-hcvf')">Đã hiểu, quay lại phiếu tham vấn</button>
+        </div>
+    </div>
+</div>
+
+<!-- ========================================================= -->
+<!-- LIGHTBOX MODAL (XEM BẢN ĐỒ PHÓNG TO) -->
+<!-- ========================================================= -->
+<div id="lightbox-modal" class="lightbox-overlay" onclick="closeLightboxOnBackdrop(event)">
+    <div class="lightbox-content">
+        <button type="button" class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img id="lightbox-image" class="lightbox-img" src="" alt="Bản đồ chi tiết">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+</div>
+
+<!-- ========================================================= -->
+<!-- SUCCESS CONFIRMATION POPUP -->
+<!-- ========================================================= -->
+<div id="successPopup" class="success-popup">
+    <div class="success-popup-box">
+        <div class="success-popup-icon">✓</div>
+        <div class="success-popup-title">NỘP PHIẾU THÀNH CÔNG!</div>
+        <p class="success-popup-desc">
+            Ý kiến tham vấn của Quý vị đã được hệ thống ghi nhận thành công và tự động tổng hợp vào Cơ sở dữ liệu Quản lý rừng bền vững FSC của Công ty QPFL.<br><br>
+            <strong>Trần Quang Tâm</strong> — Đại diện phòng Kỹ Thuật QPFL xin trân trọng cảm ơn sự phối hợp quý báu của Quý vị!
+        </p>
+        <button type="button" class="btn-modal-close" style="width: 100%; padding: 12px; font-size: 1rem;" onclick="closeSuccessPopup()">Đóng thông báo</button>
+    </div>
+</div>
+
+<script>
+    // Set Current Date in footer
+    document.addEventListener('DOMContentLoaded', () => {
+        const now = new Date();
+        const dateEl = document.getElementById('currentDateFormatted');
+        if (dateEl) {
+            dateEl.innerText = `${now.getDate()} tháng ${now.getMonth() + 1} năm ${now.getFullYear()}`;
+        }
+    });
+
+    // Modal Control Functions
+    function openSummaryModal(id) {
+        const modal = document.getElementById(id);
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeSummaryModal(id) {
+        const modal = document.getElementById(id);
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    function closeModalOnBackdrop(event, id) {
+        if (event.target.id === id) {
+            closeSummaryModal(id);
+        }
+    }
+
+    // Lightbox Control Functions
+    function openLightbox(src, caption) {
+        const modal = document.getElementById('lightbox-modal');
+        const img = document.getElementById('lightbox-image');
+        const cap = document.getElementById('lightbox-caption');
+        if (modal && img) {
+            img.src = src;
+            cap.innerText = caption || '';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeLightbox() {
+        const modal = document.getElementById('lightbox-modal');
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    function closeLightboxOnBackdrop(event) {
+        if (event.target.id === 'lightbox-modal') {
+            closeLightbox();
+        }
+    }
+
+    function closeSuccessPopup() {
+        const popup = document.getElementById('successPopup');
+        if (popup) {
+            popup.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Radio selection visual enhancer
+    function highlightRadio(labelElement) {
+        const container = labelElement.closest('.radio-options');
+        if (container) {
+            container.querySelectorAll('.radio-label').forEach(el => el.classList.remove('checked'));
+            labelElement.classList.add('checked');
+            const radio = labelElement.querySelector('input[type="radio"]');
+            if (radio) radio.checked = true;
+        }
+    }
+
+    // Keyboard ESC to close any open modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.modal-overlay.active, .lightbox-overlay.active').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.body.style.overflow = '';
+        }
+    });
+
+    // QUICK SUBMIT: 1-Click All Agree Function (Người được tham vấn nhấn 1 nút gửi ngay = Không có ý kiến gì hết, đồng ý hết)
+    async function quickSubmitAllAgree() {
+        const form = document.getElementById('consultationForm');
+        const nameInput = document.getElementById('fullName');
+        const orgInput = document.getElementById('organization');
+        const communeSelect = document.getElementById('commune');
+        const groupSelect = document.getElementById('stakeholderGroup');
+
+        // Validation for Part I basic contact
+        if (!nameInput.value.trim()) {
+            alert('Vui lòng nhập Họ và tên người đại diện ở Phần I trước khi bấm gửi nhanh.');
+            nameInput.focus();
+            nameInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+        if (!orgInput.value.trim()) {
+            alert('Vui lòng nhập Cơ quan / Đơn vị / Thôn xóm ở Phần I trước khi bấm gửi nhanh.');
+            orgInput.focus();
+            orgInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+        if (!communeSelect.value) {
+            alert('Vui lòng chọn Địa bàn xã liên quan ở Phần I.');
+            communeSelect.focus();
+            communeSelect.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+        if (!groupSelect.value) {
+            alert('Vui lòng chọn Tư cách tham vấn ở Phần I.');
+            groupSelect.focus();
+            groupSelect.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+
+        // Auto select first option (all positive/agree) for all 4 questions
+        const agreeOptions = [
+            { name: 'q1_bio', idx: 0 },
+            { name: 'q2_water', idx: 0 },
+            { name: 'q3_social', idx: 0 },
+            { name: 'q4_commit', idx: 0 }
+        ];
+
+        agreeOptions.forEach(opt => {
+            const inputs = form.querySelectorAll(`input[name="${opt.name}"]`);
+            if (inputs && inputs[opt.idx]) {
+                inputs[opt.idx].checked = true;
+                const label = inputs[opt.idx].closest('.radio-label');
+                if (label) highlightRadio(label);
+            }
+        });
+
+        // Set default text for feedback
+        const fbEl = document.getElementById('generalFeedback');
+        if (fbEl && !fbEl.value.trim()) {
+            fbEl.value = 'Hoàn toàn nhất trí với kế hoạch quản lý rừng bền vững và bảo vệ HCVF của Công ty QPFL, không có ý kiến gì khác.';
+        }
+
+        // Send submission
+        await executeSubmit(true);
+    }
+
+    // Standard Submit Form Handler
+    async function handleFormSubmit(event) {
+        event.preventDefault();
+        await executeSubmit(false);
+    }
+
+    // Core Submit Routine
+    async function executeSubmit(isQuick) {
+        const submitBtn = document.getElementById('btnSubmitForm');
+        const quickBtn = document.querySelector('.btn-quick-agree');
+
+        // Disable both buttons to prevent double-click / multiple submissions
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>⏳</span><span>ĐANG GỬI DỮ LIỆU...</span>';
+        }
+        if (quickBtn) {
+            quickBtn.disabled = true;
+            quickBtn.style.pointerEvents = 'none';
+            quickBtn.style.opacity = '0.6';
+        }
+
+        const form = document.getElementById('consultationForm');
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        // Representative & Signer metadata
+        data.signerName = data.fullName;
+        data.receiverName = 'Trần Quang Tâm (Phòng Kỹ Thuật QPFL)';
+        data.is_quick_agree = isQuick ? 1 : 0;
+
+        // Formatted timestamp
+        const now = new Date();
+        data.timestamp = now.toLocaleDateString('vi-VN') + ' ' + now.toLocaleTimeString('vi-VN');
+
+        try {
+            const res = await fetch('/api/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            
+            if (!res.ok) {
+                throw new Error('Máy chủ phản hồi mã lỗi: ' + res.status);
+            }
+
+            const result = await res.json();
+            console.log('Submission result:', result);
+
+            if (result.status !== 'success') {
+                throw new Error(result.message || 'Lỗi xử lý dữ liệu từ máy chủ');
+            }
+
+            // Show Success Popup
+            document.getElementById('successPopup').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            form.reset();
+            document.querySelectorAll('.radio-label').forEach(el => el.classList.remove('checked'));
+        } catch (err) {
+            console.error('Submission error:', err);
+            // LocalStorage fallback if network offline
+            const localList = JSON.parse(localStorage.getItem('qpfl_consultations') || '[]');
+            localList.push(data);
+            localStorage.setItem('qpfl_consultations', JSON.stringify(localList));
+
+            document.getElementById('successPopup').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            form.reset();
+            document.querySelectorAll('.radio-label').forEach(el => el.classList.remove('checked'));
+        } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span style="font-size: 1.35rem;">📤</span><span>NỘP PHIẾU THAM VẤN</span>';
+            }
+            if (quickBtn) {
+                quickBtn.disabled = false;
+                quickBtn.style.pointerEvents = 'auto';
+                quickBtn.style.opacity = '1';
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

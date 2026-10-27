@@ -1,0 +1,154 @@
+name: QPFL Consultation Data Processor & Excel Auto-Builder
+
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  process-consultation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          pip install openpyxl
+
+      - name: Process Issue Data (if triggered by new issue)
+        if: github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'consultation-data')
+        run: |
+          python - << 'EOF'
+          import json, os, datetime
+
+          issue_body = os.environ.get('ISSUE_BODY', '')
+          data_file = 'data/data.json'
+
+          # Extract JSON from issue body
+          start = issue_body.find('```json')
+          end = issue_body.rfind('```')
+          
+          if start != -1 and end != -1:
+              json_str = issue_body[start+7:end].strip()
+          else:
+              json_str = issue_body.strip()
+
+          try:
+              new_rec = json.loads(json_str)
+          except Exception as e:
+              print(f"Error parsing JSON: {e}")
+              exit(1)
+
+          with open(data_file, 'r', encoding='utf-8') as f:
+              store = json.load(f)
+
+          records = store.get('records', [])
+          new_id = len(records) + 1
+          new_rec['id'] = new_id
+          if not new_rec.get('timestamp'):
+              new_rec['timestamp'] = datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')
+
+          records.append(new_rec)
+          store['records'] = records
+          store['updated_at'] = datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')
+
+          # Recalculate stats
+          stk = {}
+          cmn = {}
+          q1 = {'muc_1': 0, 'muc_2': 0, 'muc_3': 0}
+          q2 = {'muc_1': 0, 'muc_2': 0, 'muc_3': 0}
+          q3 = {'muc_1': 0, 'muc_2': 0, 'muc_3': 0}
+          q4 = {'muc_1': 0, 'muc_2': 0, 'muc_3': 0}
+          feedbacks = []
+
+          for r in records:
+              grp = r.get('stk_group') or 'Chưa phân nhóm'
+              stk[grp] = stk.get(grp, 0) + 1
+              c = r.get('commune') or 'Khác'
+              cmn[c] = cmn.get(c, 0) + 1
+
+              for q_key, q_dict in [('q1_bio', q1), ('q2_water', q2), ('q3_social', q3), ('q4_commit', q4)]:
+                  val = r.get(q_key) or ''
+                  if 'Mức 1' in val or 'Muc 1' in val:
+                      q_dict['muc_1'] += 1
+                  elif 'Mức 2' in val or 'Muc 2' in val:
+                      q_dict['muc_2'] += 1
+                  elif 'Mức 3' in val or 'Muc 3' in val:
+                      q_dict['muc_3'] += 1
+                  else:
+                      q_dict['muc_1'] += 1
+
+              if r.get('feedback'):
+                  feedbacks.append({
+                      'id': r['id'],
+                      'name': r.get('rep_name', ''),
+                      'org': r.get('org_name', ''),
+                      'commune': r.get('commune', ''),
+                      'content': r['feedback']
+                  })
+
+          store['stats'] = {
+              'total_records': len(records),
+              'stakeholders': stk,
+              'communes': cmn,
+              'q1_bio': q1,
+              'q2_water': q2,
+              'q3_social': q3,
+              'q4_commit': q4,
+              'feedback_list': feedbacks
+          }
+
+          with open(data_file, 'w', encoding='utf-8') as f:
+              json.dump(store, f, ensure_ascii=False, indent=2)
+
+          print(f"Added record #{new_id} to {data_file}")
+          EOF
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+
+      - name: Build Excel File
+        run: |
+          python update_excel.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "QPFL FSC Automation"
+          git config --global user.email "qpflfsc@github.com"
+          git add data/data.json QPFL_Tong_Hop_Ket_Qua_Tham_Van_2026.xlsx
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-update consultation records & master Excel [skip ci]"
+            git push origin main
+          fi
+
+      - name: Close Issue with Confirmation
+        if: github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'consultation-data')
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: '✅ **Hệ thống QPFL tự động xác nhận:** Phiếu tham vấn đã được ghi nhận và tổng hợp thành công vào bảng tính Master Excel (`QPFL_Tong_Hop_Ket_Qua_Tham_Van_2026.xlsx`) và Dashboard Báo cáo trực tuyến!'
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed'
+            });
